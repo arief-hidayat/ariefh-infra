@@ -1,21 +1,15 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
 import * as cdk from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
+import * as cloud9 from 'aws-cdk-lib/aws-cloud9';
 import { Construct } from 'constructs';
 
 export class AriefhInfraStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
-
-    // example resource
-    // const queue = new sqs.Queue(this, 'AriefhInfraQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
-
     const vpc = new ec2.Vpc(this, 'dev-vpc', {
-      cidr: '10.0.0.0/16',
+      cidr: '10.1.0.0/16',
       maxAzs: 2,
       subnetConfiguration: [
         {
@@ -35,7 +29,6 @@ export class AriefhInfraStack extends Stack {
         },
       ],
     });
-
 
     new cdk.CfnOutput(this, 'vpcId', {
       value: vpc.vpcId,
