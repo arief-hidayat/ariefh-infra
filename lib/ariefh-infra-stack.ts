@@ -1,7 +1,6 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
 import * as cdk from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
-import * as cloud9 from 'aws-cdk-lib/aws-cloud9';
 import { Construct } from 'constructs';
 
 export class AriefhInfraStack extends Stack {
@@ -29,6 +28,7 @@ export class AriefhInfraStack extends Stack {
         },
       ],
     });
+    
 
     new cdk.CfnOutput(this, 'vpcId', {
       value: vpc.vpcId,
