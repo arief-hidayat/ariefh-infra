@@ -23,7 +23,7 @@ Assume you have docker and you don't want to install any other tools in your loc
 * copy [work-on.sh](./work-on.sh) to your local PATH
 * run
 ```
-work-on.sh aws-cdk:2.78.0 /bin/bash
+work-on.sh aws-cdk:2.78.0
 ```
 
 ready to start!
