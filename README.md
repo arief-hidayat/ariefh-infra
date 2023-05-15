@@ -26,8 +26,12 @@ Assume you have docker and you don't want to install any other tools in your loc
 work-on.sh aws-cdk:2.78.0
 ```
 
-ready to start!
-
+ready to work inside the container
+* if you haven't setup your aws cli
+```
+aws configure
+```
+* deploy
 ```
 git clone https://github.com/arief-hidayat/ariefh-infra.git && cd ariefh-infra
 cdk bootstrap
